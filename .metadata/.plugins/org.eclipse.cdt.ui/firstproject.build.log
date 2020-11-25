@@ -1,0 +1,25 @@
+16:35:00 **** Incremental Build of configuration Debug for project firstproject ****
+make -r -j4 all 
+Building file: ../source/firstproject.cpp
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -DDEBUG -D__CODE_RED -D__NEWLIB__ -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"/home/gokul/Documents/mcu projects/inc" -I"/home/gokul/Documents/MCUXpresso_11.0.1_2563/workspace/lpc_board_nxp_lpcxpresso_1769/inc" -I"/home/gokul/Documents/MCUXpresso_11.0.1_2563/workspace/lpc_chip_175x_6x/inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -fstack-usage -MMD -MP -MF"source/firstproject.d" -MT"source/firstproject.o" -MT"source/firstproject.d" -o "source/firstproject.o" "../source/firstproject.cpp"
+Finished building: ../source/firstproject.cpp
+ 
+Building target: firstproject.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -L"/home/gokul/Documents/MCUXpresso_11.0.1_2563/workspace/lpc_board_nxp_lpcxpresso_1769/Debug" -L"/home/gokul/Documents/MCUXpresso_11.0.1_2563/workspace/lpc_chip_175x_6x/Debug" -Xlinker -Map="firstproject.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "firstproject_Debug.ld" -o "firstproject.axf"  ./source/cr_cpp_config.o ./source/cr_startup_lpc175x_6x.o ./source/crp.o ./source/firstproject.o ./source/sysinit.o   -llpc_board_nxp_lpcxpresso_1769 -llpc_chip_175x_6x
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:        4912 B       512 KB      0.94%
+        RamLoc32:          32 B        32 KB      0.10%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: firstproject.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "firstproject.axf"; # arm-none-eabi-objcopy -v -O binary "firstproject.axf" "firstproject.bin" ; # checksum -p LPC1769 -d "firstproject.bin";
+   text	   data	    bss	    dec	    hex	filename
+   4912	      0	     32	   4944	   1350	firstproject.axf
+ 
+
+16:35:01 Build Finished. 0 errors, 0 warnings. (took 1s.151ms)
+
